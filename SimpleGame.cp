@@ -21,6 +21,8 @@ void GameApplication::SetUp() {
 	stageView->AddSubview(std::shared_ptr<View>(new SpriteView(stageView.get(), spriteBox)));
 	Rect spriteBox2 = { 50, 40, 113, 103 };
 	stageView->AddSubview(std::shared_ptr<View>(new SpriteView(stageView.get(), spriteBox2)));
+	
+	HideMenuBar();
 }
 
 

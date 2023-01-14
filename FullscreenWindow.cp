@@ -5,8 +5,8 @@ FullscreenWindow::FullscreenWindow(CommandHandler *nextHandler, short windID, Wi
 : Window(nextHandler, windID, flags) {
    short w = qd.screenBits.bounds.right - qd.screenBits.bounds.left;
    short h = qd.screenBits.bounds.bottom - qd.screenBits.bounds.top;
-   ::MoveWindow(mWindow, 0, GetMBarHeight(), true);
-   SizeWindow(w, h - GetMBarHeight());
+   ::MoveWindow(mWindow, 0, 0, true);
+   SizeWindow(w, h);
 }
 
 void FullscreenWindow::InitWindow() {

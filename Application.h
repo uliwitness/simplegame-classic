@@ -15,12 +15,21 @@ public:
 	
 	static Application *Shared() { return sApplication; }
 	
+	void ToggleMenuBar() { if (mOldGrayRgn) ShowMenuBar(); else HideMenuBar(); }
+	void HideMenuBar();
+	void ShowMenuBar();
+	
 protected:
 	virtual void Initialize();
 	virtual void SetUp();
 	void UpdateMenuItems();
 	
 	bool mQuit;
+	short mSystemHelpMenuID;
+	short mSystemHelpMItemCount;
+	RgnHandle mOldGrayRgn;
+	short mOldMBarHeight;
+	bool mBarWasHiddenBeforeSuspend;
 
 	static Application * sApplication;
 };

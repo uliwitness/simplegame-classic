@@ -14,6 +14,18 @@ bool CommandHandler::UpdateMenuItem(short menuID, short itemNumber) {
 	}
 }
 
+void CommandHandler::HandleKeyDown(EventRecord *event) {
+	if (mNextHandler) {
+		return mNextHandler->HandleKeyDown(event);
+	}
+}
+
+void CommandHandler::HandleKeyUp(EventRecord *event) {
+	if (mNextHandler) {
+		return mNextHandler->HandleKeyUp(event);
+	}
+}
+
 long CommandHandler::Idle() {
 	if (mNextHandler) {
 		return mNextHandler->Idle();
